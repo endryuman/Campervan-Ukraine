@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Campervan-Ukraine/static/css/main.9b3d3c22.css",
+    "main.js": "/Campervan-Ukraine/static/js/main.b9a08058.js",
+    "index.html": "/Campervan-Ukraine/index.html",
+    "main.9b3d3c22.css.map": "/Campervan-Ukraine/static/css/main.9b3d3c22.css.map",
+    "main.b9a08058.js.map": "/Campervan-Ukraine/static/js/main.b9a08058.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9b3d3c22.css",
+    "static/js/main.b9a08058.js"
+  ]
+}
