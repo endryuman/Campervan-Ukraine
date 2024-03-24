@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/Campervan-Ukraine/static/css/main.9b3d3c22.css",
-    "main.js": "/Campervan-Ukraine/static/js/main.b9a08058.js",
+    "main.css": "/Campervan-Ukraine/static/css/main.0781b5d4.css",
+    "main.js": "/Campervan-Ukraine/static/js/main.49474d7b.js",
+    "static/media/hero.webp": "/Campervan-Ukraine/static/media/hero.39cfd1803dc8e5a27dc8.webp",
+    "static/media/sprite.svg": "/Campervan-Ukraine/static/media/sprite.053affc9a8923a864bbedf544340cc72.svg",
     "index.html": "/Campervan-Ukraine/index.html",
-    "main.9b3d3c22.css.map": "/Campervan-Ukraine/static/css/main.9b3d3c22.css.map",
-    "main.b9a08058.js.map": "/Campervan-Ukraine/static/js/main.b9a08058.js.map"
+    "main.0781b5d4.css.map": "/Campervan-Ukraine/static/css/main.0781b5d4.css.map",
+    "main.49474d7b.js.map": "/Campervan-Ukraine/static/js/main.49474d7b.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b3d3c22.css",
-    "static/js/main.b9a08058.js"
+    "static/css/main.0781b5d4.css",
+    "static/js/main.49474d7b.js"
   ]
 }
