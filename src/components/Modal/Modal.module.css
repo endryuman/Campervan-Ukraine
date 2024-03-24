@@ -1,0 +1,160 @@
+.closeButton {
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 400;
+  background: transparent;
+  position: absolute;
+  top: 30px;
+  right: 45px;
+  transform: rotate(90deg);
+}
+
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+  z-index: 1200;
+}
+
+.modalBody {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.modalContent {
+  width: 982px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  overflow-y: auto;
+  height: 90vh;
+}
+
+.catalogInfoWrap {
+  width: 100%;
+}
+
+.mainInfo {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+}
+
+.likeBtn {
+  background-color: inherit;
+  stroke: black;
+  fill: transparent;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.subInfo {
+  display: flex;
+  gap: 25px;
+  margin-top: 10px;
+}
+
+.subInfoTitle {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  fill: transparent;
+  stroke: black;
+
+  transition: 200ms linear;
+}
+
+.subInfoSvg {
+  width: 20px;
+  height: 20px;
+}
+
+.descr {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+
+  margin-top: 30px;
+  color: #3f3f3f;
+}
+
+.price {
+  display: flex;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.likeBtn {
+  background-color: inherit;
+  stroke: black;
+  fill: transparent;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.imgList {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.img {
+  width: 290px;
+  height: 310px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.modalNav {
+  display: flex;
+  border-bottom: 1px solid #10182833;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.modalNavBtn {
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  cursor: pointer;
+  padding: 20px 0;
+  margin-bottom: -2px;
+}
+
+.subWrap {
+  display: flex;
+}

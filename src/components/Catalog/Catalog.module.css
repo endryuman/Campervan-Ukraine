@@ -1,0 +1,155 @@
+.catalogList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.catalogItem {
+  position: relative;
+  width: 900px;
+  background-color: white;
+
+  border: 1px solid #10182833;
+  border-radius: 20px;
+  padding: 24px;
+
+  display: flex;
+  gap: 24px;
+}
+
+.catalogImg {
+  min-width: 350px;
+  height: 310px;
+  border-radius: 10px;
+  background-position: center;
+  background-size: cover;
+}
+
+.catalogInfoWrap {
+  width: 100%;
+}
+
+.mainInfo {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+}
+
+.likeBtn {
+  background-color: inherit;
+  stroke: black;
+  fill: transparent;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.likeBtn:hover,
+.likeBtn:active {
+  stroke: var(--accentColor);
+}
+
+.likeBtnActive {
+  fill: var(--accentColor);
+  stroke: var(--accentColor);
+}
+
+.subInfo {
+  display: flex;
+  gap: 25px;
+  margin-top: 10px;
+}
+
+.subInfoTitle {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  fill: transparent;
+  stroke: black;
+}
+
+.subInfoSvg {
+  width: 20px;
+  height: 20px;
+}
+
+.descr {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+
+  margin-top: 30px;
+  color: #3f3f3f;
+}
+
+.equipList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.equipWrap {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f4f7;
+  color: rgb(96, 96, 96);
+  stroke: rgb(96, 96, 96);
+  fill: transparent;
+  padding: 10px 15px;
+  border-radius: 200px;
+}
+
+.equipSvg {
+  width: 20px;
+  height: 20px;
+  fill: rgb(96, 96, 96);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.equipBtn {
+  background-color: var(--accentColor);
+  border-radius: 200px;
+  color: white;
+  padding: 10px 20px;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.005em;
+  text-align: left;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  transition: 200ms linear;
+
+  cursor: pointer;
+}
+
+.equipBtn:hover,
+.equipBtn:active {
+  background-color: var(--accentHover);
+}

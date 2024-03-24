@@ -1,0 +1,158 @@
+.sidebar{
+    width: 420px;
+    height: 880px;
+    background-color: цршеу;
+    border-radius: 20px;
+    padding: 20px 30px;
+}
+
+.form{
+    border: none;
+    margin-top: 30px;
+}
+
+.formTitle{
+    width: 100%;
+    border-bottom: 1px solid #1018281A;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+
+}
+
+.subtitle{
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: rgb(79, 79, 79);
+  margin-bottom: 10px;
+}
+
+.locationWrap{
+  margin-bottom: 40px;
+}
+
+.select{
+  border: none;
+  background-color: aqua;
+}
+
+.equipWrap{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 18px;
+    width: 18px;
+  }
+  
+  
+  .checkmark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 112px;
+    height: 95px;
+    background-color: transparent;
+    border: 1px solid grey;
+    border-radius: 20px;
+    fill: transparent;
+    stroke: black;
+    transition: 200ms linear;
+  }
+
+  .checkmark2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 112px;
+    height: 95px;
+    background-color: transparent;
+    border: 1px solid grey;
+    border-radius: 20px;
+    fill: black;
+    stroke: black;
+    transition: 200ms linear;
+  }
+  
+  
+
+  
+  .container:hover input ~ .checkmark {
+    border: 1px solid var(--accentColor);
+  }
+
+  .container:hover input ~ .checkmark2 {
+    border: 1px solid var(--accentColor);
+  }
+  
+  
+  .container input:checked ~ .checkmark {
+    background-color: var(--accentColor);
+    color: white;
+    stroke: white;
+    border: 1px solid var(--accentColor);
+  }
+
+  .container input:checked ~ .checkmark2 {
+    background-color: var(--accentColor);
+    color: white;
+    stroke: white;
+    fill: white;
+    border: 1px solid var(--accentColor);
+  }
+
+  .name{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+
+  }
+
+  .svg{
+    width: 28px;
+    height: 28px;
+  }
+  
+  .button{
+    width: 200px;
+    height: 50px;
+    color: white;
+    background-color: var(--accentColor);
+    padding: 10px 20px;
+    border-radius: 200px;
+    margin-top: 40px;
+    cursor: pointer;
+    transition: 200ms linear;
+  }
+
+  .button:hover,  .button:active{
+    background-color: var(--accentHover);
+  }
