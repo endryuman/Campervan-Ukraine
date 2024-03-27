@@ -2,9 +2,13 @@ import { Modal } from 'components/Modal/Modal';
 import sprite from '../../images/sprite.svg';
 import css from './Catalog.module.css';
 import { useState } from 'react';
+import { updateAdvertThunk } from '../../redux/operations';
+import { useDispatch } from 'react-redux';
 
 export const Card = ({ advert }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(advert.favorite);
+  const dispatch = useDispatch();
 
   const handleOpenModal = () => {
     setIsOpen(prev => !prev);
@@ -12,6 +16,17 @@ export const Card = ({ advert }) => {
 
   const handleCloseModal = () => {
     setIsOpen(prev => !prev);
+  };
+
+  const handleToggleFavorite = () => {
+    const { favorite } = advert;
+    isFavorite === 'false' ? setIsFavorite('true') : setIsFavorite('false');
+    dispatch(
+      updateAdvertThunk({
+        id: `${advert.id}`,
+        body: { favorite: `${favorite === 'true' ? 'false' : 'true'}` },
+      })
+    );
   };
 
   let key = 0;
@@ -30,7 +45,7 @@ export const Card = ({ advert }) => {
             <span className={css.name}>{advert.name}</span>
             <div>
               <span className={css.price}>€{advert.price}.00</span>
-              <button className={css.likeBtn}>
+              <button onClick={handleToggleFavorite} className={css.likeBtn}>
                 <svg className={css.subInfoSvg}>
                   <use href={`${sprite}#icon-heart`} />
                 </svg>
