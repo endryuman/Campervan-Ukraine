@@ -1,5 +1,29 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getAdvertsThunk } from './operations';
+import {
+  getAdvertsThunk,
+  addAdvertThunk,
+  deleteAdvertThunk,
+  updateAdvertThunk,
+} from './operations';
+
+const handleFulfilledAdd = (state, action) => {
+  state.isLoading = false;
+  state.adverts.push(action.payload);
+  state.error = '';
+};
+
+const handleFulfilledDel = (state, { payload }) => {
+  state.isLoading = false;
+  state.adverts = state.Advert.filter(el => el._id !== payload?._id);
+  state.error = '';
+};
+
+const handleFulfilledUpd = (state, { payload }) => {
+  state.isLoading = false;
+  state.adverts = state.adverts.map(advert =>
+    advert._id === payload._id ? { ...advert, ...payload } : advert
+  );
+};
 
 export const AdvertSlice = createSlice({
   name: 'adverts',
@@ -7,6 +31,12 @@ export const AdvertSlice = createSlice({
     adverts: [],
     isLoading: false,
     error: '',
+    filters: {},
+  },
+  reducers: {
+    setFilter: (state, { payload }) => {
+      state.filters = payload;
+    },
   },
   extraReducers: builder => {
     builder
@@ -15,6 +45,9 @@ export const AdvertSlice = createSlice({
         state.adverts = payload;
         state.error = '';
       })
+      .addCase(addAdvertThunk.fulfilled, handleFulfilledAdd)
+      .addCase(deleteAdvertThunk.fulfilled, handleFulfilledDel)
+      .addCase(updateAdvertThunk.fulfilled, handleFulfilledUpd)
       .addMatcher(
         action => action.type.endsWith('/pending'),
         state => {
@@ -30,3 +63,5 @@ export const AdvertSlice = createSlice({
       );
   },
 });
+
+export const { setFilter } = AdvertSlice.actions;

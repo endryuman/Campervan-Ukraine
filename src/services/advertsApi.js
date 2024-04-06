@@ -13,15 +13,21 @@ export const addAdvert = async data => {
   );
 };
 
-export const deleteAdvert = async id => {
+export const deleteAdvert = async _id => {
   return await axios.delete(
-    `https://657d99183e3f5b189462cbc2.mockapi.io/adverts/${id}`
+    `https://657d99183e3f5b189462cbc2.mockapi.io/adverts/${_id}`
   );
 };
 
-export const updateAdvert = async (id, data) => {
+export const updateAdvert = async (_id, data) => {
   return await axios.put(
-    `https://657d99183e3f5b189462cbc2.mockapi.io/adverts/${id}`,
+    `https://657d99183e3f5b189462cbc2.mockapi.io/adverts/${_id}`,
     data
   );
 };
+// export const updateAdvert = async (_id, data) => {
+//   return await axios.put(
+//     `https://65fd67169fc4425c6531dbaa.mockapi.io/adverts/${_id}`,
+//     data
+//   );
+// };

@@ -82,8 +82,16 @@
   gap: 5px;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   fill: transparent;
   stroke: black;
+
+  transition: 200ms linear;
+}
+
+.subInfoTitle:hover {
+  color: var(--accentColor);
+  stroke: var(--accentColor);
 }
 
 .subInfoSvg {
@@ -152,4 +160,20 @@
 .equipBtn:hover,
 .equipBtn:active {
   background-color: var(--accentHover);
+}
+
+.loadMoreBtn {
+  width: 145px;
+  height: 56px;
+  border-radius: 200px;
+  border: 1px solid #47546733;
+  background-color: transparent;
+  margin-left: 45%;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.loadMoreBtn:hover,
+.loadMoreBtn:active {
+  background-color: #ededed;
 }

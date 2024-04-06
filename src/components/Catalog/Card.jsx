@@ -5,9 +5,9 @@ import { useState } from 'react';
 import { updateAdvertThunk } from '../../redux/operations';
 import { useDispatch } from 'react-redux';
 
-export const Card = ({ advert }) => {
+export const Card = ({ adv }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(advert.favorite);
+  const [isFavorite, setIsFavorite] = useState(adv.favorite);
   const dispatch = useDispatch();
 
   const handleOpenModal = () => {
@@ -19,34 +19,37 @@ export const Card = ({ advert }) => {
   };
 
   const handleToggleFavorite = () => {
-    const { favorite } = advert;
+    const { favorite } = adv;
     isFavorite === 'false' ? setIsFavorite('true') : setIsFavorite('false');
     dispatch(
       updateAdvertThunk({
-        id: `${advert.id}`,
+        id: `${adv._id}`,
         body: { favorite: `${favorite === 'true' ? 'false' : 'true'}` },
       })
     );
   };
 
-  let key = 0;
-
   return (
     <>
-      <li key={(key += 1)} className={css.catalogItem}>
+      <li key={adv._id} className={css.catalogItem}>
         <div
-          style={{ backgroundImage: `url(${advert.gallery[0]})` }}
+          style={{ backgroundImage: `url(${adv.gallery[0]})` }}
           className={css.catalogImg}
-          src={advert.gallery[0]}
+          src={adv.gallery[0]}
           alt=""
         ></div>
         <div className={css.catalogInfoWrap}>
           <div className={css.mainInfo}>
-            <span className={css.name}>{advert.name}</span>
+            <span className={css.name}>{adv.name}</span>
             <div>
-              <span className={css.price}>€{advert.price}.00</span>
+              <span className={css.price}>€{adv.price}.00</span>
               <button onClick={handleToggleFavorite} className={css.likeBtn}>
-                <svg className={css.subInfoSvg}>
+                <svg
+                  style={
+                    isFavorite === 'true' ? { fill: 'red', stroke: 'red' } : {}
+                  }
+                  className={css.subInfoSvg}
+                >
                   <use href={`${sprite}#icon-heart`} />
                 </svg>
               </button>
@@ -66,43 +69,46 @@ export const Card = ({ advert }) => {
               >
                 <use href={`${sprite}#icon-star`} />
               </svg>
-              {`${advert.rating} (${advert.reviews.length} Reviews)`}
+              {`${adv.rating} (${adv.reviews.length} Reviews)`}
             </span>
-
-            <span className={css.subInfoTitle}>
-              <svg className={css.subInfoSvg}>
-                <use href={`${sprite}#icon-pin`} />
-              </svg>
-              {advert.location}
-            </span>
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${adv.location}`}
+            >
+              <span className={css.subInfoTitle}>
+                <svg className={css.subInfoSvg}>
+                  <use href={`${sprite}#icon-pin`} />
+                </svg>
+                {adv.location}
+              </span>
+            </a>
           </div>
-          <p className={css.descr}>{advert.description.slice(0, 55)}...</p>
+          <p className={css.descr}>{adv.description.slice(0, 55)}...</p>
           <ul className={css.equipList}>
             <li className={css.equipWrap}>
               <svg className={css.equipSvg}>
                 <use href={`${sprite}#icon-adults`} />
               </svg>
-              {advert.adults} Adults
+              {adv.adults} Adults
             </li>
             <li className={css.equipWrap}>
               <svg className={css.equipSvg}>
                 <use href={`${sprite}#icon-child`} />
               </svg>
-              {advert.children} Children
+              {adv.children} Children
             </li>
             <li className={css.equipWrap}>
               <svg style={{ fill: 'transparent' }} className={css.equipSvg}>
-                <use href={`${sprite}#icon-auto`} />
+                <use href={`${sprite}#icon-automatic`} />
               </svg>
-              {advert.transmission}
+              {adv.transmission}
             </li>
             <li className={css.equipWrap}>
               <svg className={css.equipSvg}>
                 <use href={`${sprite}#icon-petrol`} />
               </svg>
-              {advert.engine}
+              {adv.engine}
             </li>
-            {advert.details.kitchen > 0 && (
+            {adv.details.kitchen > 0 && (
               <li className={css.equipWrap}>
                 <svg style={{ fill: 'transparent' }} className={css.equipSvg}>
                   <use href={`${sprite}#icon-kitchen`} />
@@ -110,7 +116,7 @@ export const Card = ({ advert }) => {
                 Kitchen
               </li>
             )}
-            {advert.details.bathroom > 0 && (
+            {adv.details.bathroom > 0 && (
               <li className={css.equipWrap}>
                 <svg className={css.equipSvg}>
                   <use href={`${sprite}#icon-shower`} />
@@ -122,11 +128,11 @@ export const Card = ({ advert }) => {
               <svg className={css.equipSvg}>
                 <use href={`${sprite}#icon-bedroom`} />
               </svg>
-              {advert.details.beds > 1
-                ? `${advert.details.beds} Beds`
-                : ` ${advert.details.beds} Bed`}
+              {adv.details.beds > 1
+                ? `${adv.details.beds} Beds`
+                : ` ${adv.details.beds} Bed`}
             </li>
-            {advert.details.airConditioner > 0 && (
+            {adv.details.airConditioner > 0 && (
               <li className={css.equipWrap}>
                 <svg className={css.equipSvg}>
                   <use href={`${sprite}#icon-conditioner`} />
@@ -140,7 +146,7 @@ export const Card = ({ advert }) => {
           </button>
         </div>
       </li>
-      {isOpen && <Modal onClose={handleCloseModal} card={advert}></Modal>}
+      {isOpen && <Modal onClose={handleCloseModal} card={adv}></Modal>}
     </>
   );
 };
